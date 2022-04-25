@@ -1,0 +1,19 @@
+{
+   "name": "mvc/modelo",
+   "description": "Modelo mvc",
+   "require": {
+      "php": ">=7.4"
+   },
+   "authors": [
+      {
+         "name": "Luiz Henrique Santos",
+         "email": "luiz.santos85@gmail.com"
+      }
+   ],
+   "autoload": {
+      "psr-4": {
+         "App\\": "app/",
+         "MF\\": "vendor/MF"
+      }
+   }
+}
