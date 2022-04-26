@@ -1,4 +1,4 @@
-<?= $render('header') ?>
+<?= $render('header', ['activeMenu' => 'about']) ?>
 
 <h2>Página Sobre</h2>
 

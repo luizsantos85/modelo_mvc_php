@@ -1,6 +1,6 @@
 <?php
 
-namespace MF\Init;
+namespace MF\Core;
 
 abstract class Router
 {

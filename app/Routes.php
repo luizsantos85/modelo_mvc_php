@@ -2,7 +2,7 @@
 
 namespace App;
 
-use MF\Init\Router;
+use MF\Core\Router;
 
 class Routes extends Router
 {
@@ -10,14 +10,14 @@ class Routes extends Router
     {
         $routes['home'] = [
             'route' => '/',
-            'controller' => 'indexController',
+            'controller' => 'IndexController',
             'action' => 'index'
         ];
 
         $routes['about'] = [
             'route' => '/sobre',
-            'controller' => 'indexController',
-            'action' => 'about'
+            'controller' => 'AboutController',
+            'action' => 'index'
         ];
 
         $this->setRoutes($routes);

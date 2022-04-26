@@ -1,22 +1,26 @@
 <?php
+
 namespace App\Controllers;
 
-use MF\Init\Controller;
+use MF\Core\Controller;
+use App\Models\Produto;
+use App\Connection;
 
 class IndexController extends Controller
 {
 
     public function index()
     {
-        $data = ['Sofá', 'Cadeira', 'Cama'];
-        // $this->redirect('/sobre');
-        $this->render('home/index', ['dados' => $data]);
-    }
+        //Instancia de conexão;
+        $conn = Connection::getDb();
 
-    public function about()
-    {
-        $data = ['Computador', 'Teclado', 'Mouse'];
-        $this->render('about/index', ['data' => $data]);
+        //instancia model
+        $produto = new Produto($conn);
+        $produtos = $produto->getProducts();
+
+        
+        // $this->redirect('/sobre');
+        $this->render('home/index', ['produtos' => $produtos]);
     }
 
 }

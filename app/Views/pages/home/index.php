@@ -1,9 +1,15 @@
-<?= $render('header') ?>
+<?= $render('header', ['activeMenu' => 'home']) ?>
 
-<h2>Página Home.</h2>
+<section class="container">
+    <h2>Página Home</h2>
 
-<?php foreach ($dados as $item => $value) : ?>
-    <li><?= $item ?> - <?= $value ?></li>
-<?php endforeach; ?>
+    <?php foreach ($produtos as $item => $value) : ?>
+        <li><?= $item ?> - <?= $value ?></li>
+    <?php endforeach; ?>
+
+    
+
+</section>
+
 
 <?= $render('footer') ?>

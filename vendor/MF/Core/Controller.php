@@ -1,6 +1,6 @@
 <?php
 
-namespace MF\Init;
+namespace MF\Core;
 
 use \App\Config;
 
@@ -40,7 +40,7 @@ abstract class Controller
         $this->_render('partials', $viewName, $viewData);
     }
 
-    public function render(string $viewName, array $viewData = [])
+    protected function render(string $viewName, array $viewData = [])
     {
         $this->_render('pages', $viewName, $viewData);
     }
