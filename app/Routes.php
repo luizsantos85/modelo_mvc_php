@@ -2,7 +2,7 @@
 
 namespace App;
 
-use MF\Core\Router;
+use Core\Router;
 
 class Routes extends Router
 {

@@ -1,9 +1,8 @@
 <?php
 
-namespace App;
+namespace Core;
 
-use App\Config;
-use PDOException;
+use \App\Config;
 
 class Connection
 {
@@ -13,7 +12,7 @@ class Connection
             $conn = new \PDO(Config::DB_DRIVER . ":host=" . Config::DB_HOST . ";dbname=" . Config::DB_DATABASE, Config::DB_USER, Config::DB_PASS);
 
             return $conn;
-        } catch (PDOException $err) {
+        } catch (\PDOException $err) {
             //throw $err;
         }
     }

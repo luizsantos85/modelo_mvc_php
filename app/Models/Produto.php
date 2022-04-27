@@ -2,19 +2,14 @@
 
 namespace App\Models;
 
-class Produto
+use Core\Model;
+
+class Produto extends Model
 {
-
-    protected $db;
-
-    public function __construct(\PDO $db)
-    {
-       $this->db = $db; 
-    }
-
     public function getProducts()
     {
-        return array('Mesa','Cadeira');
+        $query = $this->db->prepare("SELECT id, descricao, preco FROM tb_produtos");
+        $query->execute();
+        return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
-
 }

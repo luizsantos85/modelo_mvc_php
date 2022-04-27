@@ -1,6 +1,6 @@
 <?php
 
-namespace MF\Core;
+namespace Core;
 
 use \App\Config;
 

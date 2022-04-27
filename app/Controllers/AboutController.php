@@ -2,13 +2,17 @@
 
 namespace App\Controllers;
 
-use MF\Core\Controller;
+use Core\Controller;
+use Core\Model;
+use App\Models\About;
 
 class AboutController extends Controller
 {
     public function index()
     {
-        $data = ['Computador', 'Teclado', 'Mouse'];
-        $this->render('about/index', ['data' => $data]);
+        $data = new About();
+        $info = $data->getInfo();
+
+        $this->render('about/index', ['data' => $info]);
     }
 }

@@ -1,10 +1,16 @@
 <?= $render('header', ['activeMenu' => 'about']) ?>
 
-<h2>Página Sobre</h2>
+<section class="container">
+    <h2>Página Sobre</h2>
 
-<?php foreach ($data as $item => $value) : ?>
-    <li><?= $item ?> - <?= $value ?></li>
-<?php endforeach; ?>
+    <div class="row my-4">
+        <?php foreach ($data as $info) : ?>
+            <h3><?= $info['titulo'] ?></h3>
+            <p><?= $info['descricao'] ?></p>
+        <?php endforeach; ?>
+    </div>
+
+</section>
 
 
 <?= $render('footer') ?>
