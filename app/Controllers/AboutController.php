@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use Core\Controller;
-use Core\Model;
 use App\Models\About;
 
 class AboutController extends Controller

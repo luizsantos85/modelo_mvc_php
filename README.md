@@ -27,13 +27,14 @@ As configurações de Banco de Dados e URL estão no arquivo _app/Config.php_
 Você deve acessar a pasta _public_ do projeto.
 
 O ideal é criar um **_alias_** específico no servidor que direcione diretamente para a pasta _public_.
+Ou fazer o apontamento para a pasta _public_.
 
 ## Modelo de MODEL
 
 ```php
 <?php
 namespace app\Models;
-use \core\Model;
+use Core\Model;
 
 class Usuario extends Model {
     //querys

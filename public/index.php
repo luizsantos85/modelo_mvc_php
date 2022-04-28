@@ -1,9 +1,6 @@
 <?php
-
-use \App\Routes;
-
 session_start();
 require_once "../vendor/autoload.php";
+require_once "../app/Routes.php";
 
-$route  = new Routes();
-
+$router->run($router->routes);

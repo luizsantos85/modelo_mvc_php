@@ -4,7 +4,7 @@ namespace App;
 
 class Config
 {
-    const BASE_DIR = '';
+    const BASE_DIR = '/Aulas-Projetos/udemy_php/mvc-modelo/public';
 
     const DB_DRIVER = 'mysql';
     const DB_HOST = 'localhost';

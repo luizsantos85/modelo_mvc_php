@@ -2,42 +2,29 @@
 
 namespace Core;
 
-abstract class Router
+use Core\RouterBase;
+
+class Router extends RouterBase
 {
-    private $routes;
-    abstract protected function initRoutes();
+    public $routes;
 
-    public function __construct()
+    public function get($endpoint, $trigger)
     {
-        $this->initRoutes();
-        $this->run($this->getUrl());
+        $this->routes['get'][$endpoint] = $trigger;
     }
 
-    public function getRoutes()
+    public function post($endpoint, $trigger)
     {
-        return $this->routes;
+        $this->routes['post'][$endpoint] = $trigger;
     }
 
-    public function setRoutes(array $routes)
+    public function put($endpoint, $trigger)
     {
-        $this->routes = $routes;
+        $this->routes['put'][$endpoint] = $trigger;
     }
 
-    protected function run($url)
+    public function delete($endpoint, $trigger)
     {
-        foreach ($this->getRoutes() as $key => $route) {
-
-            if ($url == $route['route']) {
-                $class = "App\\Controllers\\" . ucfirst($route['controller']);
-                $controller = new $class;
-                $action = $route['action'];
-                $controller->$action();
-            }
-        }
-    }
-
-    protected function getUrl()
-    {
-        return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $this->routes['delete'][$endpoint] = $trigger;
     }
 }

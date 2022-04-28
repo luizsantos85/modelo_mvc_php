@@ -4,8 +4,10 @@ namespace App\Controllers;
 
 use Core\Controller;
 use App\Models\Produto;
+use App\Models\About;
 
-class IndexController extends Controller
+
+class HomeController extends Controller
 {
 
     public function index()
@@ -17,5 +19,13 @@ class IndexController extends Controller
 
         //Modo de usar o redirect
         // $this->redirect('/sobre');
+    }
+
+    public function about()
+    {
+        $data = new About();
+        $info = $data->getInfo();
+
+        $this->render('about/index', ['data' => $info]);
     }
 }

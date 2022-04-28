@@ -2,7 +2,7 @@
 
 namespace Core;
 
-use \App\Config;
+use App\Config;
 
 abstract class Controller
 {
